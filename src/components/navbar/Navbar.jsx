@@ -7,7 +7,7 @@ import { PiShoppingCart } from "react-icons/pi";
 import NavLinks from "./Navlink";
 
 
-const Navbar = () => {
+const navbar = () => {
     return (
         <div className="w-full bg-white">
             <div className="mt-6 flex items-center justify-between gap-6 mx-auto px-8 lg:px-0 lg:max-w-7xl mb-6">
@@ -56,4 +56,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default navbar;
