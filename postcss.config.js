@@ -1,7 +1,7 @@
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-  reactStrictMode: false,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: false, // Add or update this field here
+  swcMinify: true,
 }
+
+module.exports = nextConfig;
