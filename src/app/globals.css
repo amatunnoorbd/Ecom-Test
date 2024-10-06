@@ -2,26 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.footer-title {
+    color: orange;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* navbar style  */
+.dropbtn {
+    font-size: 15px;
+    font-weight: 500;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 230px;
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: red;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: red;
+}
+
+/* navbar style */
+
+/* Card slider container */
+.card-slider-container {
+    position: relative;
+}
+
+/* Custom arrow buttons */
+.custom-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgb(75, 75, 65);
+    /* Black background */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Darker background on hover */
+}
+
+.custom-arrow span {
+    color: #ffffff;
+    /* White color for arrow */
+}
+
+.custom-arrow.prev {
+    left: 10px;
+    z-index: 50;
+}
+
+.custom-arrow.next {
+    right: 10px;
+}
+
+.slick-slide {
+    display: flex;
+    gap: 20px;
+}
+
+
+.slick-slide div {
+    margin-right: 14px;
+    /* Adjust the value to increase or decrease the right-side gap */
+}
+
+.slick-list {
+    overflow: visible;
+    /* Ensures that the right margin on the last image doesn't get cut off */
+}
+
+.footer-title {
+    color: orange;
+}
+
+/* Tailwind CSS Dropdowns */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
