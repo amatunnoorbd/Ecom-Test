@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Footer title */
 .footer-title {
     color: orange;
 }
 
-/* navbar style  */
-.dropbtn {
-    font-size: 15px;
-    font-weight: 500;
-}
-
+/* Navbar style */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -22,7 +18,7 @@
     position: absolute;
     background-color: white;
     min-width: 230px;
-    z-index: 1;
+    z-index: 10;
     font-size: 14px;
     font-weight: 500;
 }
@@ -45,70 +41,98 @@
     color: red;
 }
 
-/* navbar style */
-
-/* Card slider container */
-.card-slider-container {
-    position: relative;
+/* Banner Swiper Styles */
+.swiper {
+    width: 100%;
+    height: 100%;
 }
 
-/* Custom arrow buttons */
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Custom Arrow Buttons */
 .custom-arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background-color: rgb(75, 75, 65);
-    /* Black background */
+    width: 30px;
+    /* Smaller width */
+    height: 30px;
+    /* Smaller height */
+    background-color: #00008B;
+    /* Dark gray background */
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    z-index: 50;
+    /* Ensure arrows appear above content */
 }
 
 .custom-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Darker background on hover */
+    background-color: rgb(178, 164, 164);
+    /* Background becomes white on hover */
+    color: black;
+    /* Text color becomes black on hover */
+}
+
+/* Ensure that the text color changes on hover */
+.custom-arrow:hover span {
+    color: black;
+    /* Change arrow text color to black on hover */
 }
 
 .custom-arrow span {
     color: #ffffff;
-    /* White color for arrow */
+    /* White arrow color */
+    font-size: 18px;
+    /* Adjusted font size for smaller arrow */
 }
 
 .custom-arrow.prev {
-    left: 10px;
-    z-index: 50;
+    left: 8px;
+    /* Adjust left position */
 }
 
 .custom-arrow.next {
-    right: 10px;
+    right: 8px;
+    /* Adjust right position */
 }
 
-.slick-slide {
-    display: flex;
-    gap: 20px;
+/* ./styles/globals.css */
+.clip-path-custom {
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 95%, 0 70%);
 }
 
 
-.slick-slide div {
-    margin-right: 14px;
-    /* Adjust the value to increase or decrease the right-side gap */
-}
+/* 
+Each point is defined as a percentage of the element's width and height.
+0 0 means top-left corner (x = 0%, y = 0%).
+100% 0 means top-right corner (x = 100%, y = 0%).
+100% 75% means 75% down along the right edge (x = 100%, y = 75%).
+50% 100% means bottom center (x = 50%, y = 100%).
+0 75% means 75% down along the left edge (x = 0%, y = 75%).
+ */
 
-.slick-list {
-    overflow: visible;
-    /* Ensures that the right margin on the last image doesn't get cut off */
-}
-
-.footer-title {
+ .footer-title {
     color: orange;
 }
 
-/* Tailwind CSS Dropdowns */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+
