@@ -131,8 +131,31 @@ Each point is defined as a percentage of the element's width and height.
 0 75% means 75% down along the left edge (x = 0%, y = 75%).
  */
 
- .footer-title {
+.footer-title {
     color: orange;
 }
 
+.mainImageContainer {
+    position: relative;
+    width: 550px;
+    height: 550px;
+    overflow: hidden;
 
+  }
+  
+  .zoomOverlay {
+    width: 550px;
+    height: 550px;
+    background-size: 500%; /* জুম লেভেল */
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .fixedZoomImage {
+    width: 550px;
+    height: 550px;
+    border: 2px solid #ddd;
+    background-size: 500%; /* জুম লেভেল */
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+  }
+  

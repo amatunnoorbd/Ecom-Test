@@ -3,7 +3,7 @@ import React from 'react';
 const page = () => {
     return (
         <div>
-            this is category layout
+            <div id="modal-root"></div>
         </div>
     );
 };

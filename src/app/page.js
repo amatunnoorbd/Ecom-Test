@@ -19,6 +19,7 @@ import Feedback from "@/components/Home/Feedback";
 export default function Home() {
   return (
     <div>
+      <div id="modal-root"></div>
       <Banner></Banner>
       <div className="mx-28 my-5">
         <Image

@@ -93,11 +93,7 @@ const ExtraSliding = () => {
 
     return (
         <div className='px-[4.5%] mb-10'>
-            <CommonHeading
-                title="BEST SELLING PRODUCT"
-                view="yes"
-            />
-
+            
             {/* Swiper Slider Section */}
             <div className='relative py-2'>
                 <Swiper
