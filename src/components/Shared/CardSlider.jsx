@@ -15,7 +15,7 @@ const CardSlider = ({ item, height = 390, imageHeightPercent = 66 }) => {
         <>
             <div className="border rounded-xl overflow-hidden shadow-2xl shadow-[#ccc3c3]">
                 <Link
-                    href="/product"
+                    href=""
                     className="shadow-lg flex flex-col relative"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}

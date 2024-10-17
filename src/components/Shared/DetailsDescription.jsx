@@ -29,7 +29,6 @@ const DetailsDescription = () => {
             </div>
 
 
-
             {/* Tab Content */}
             <div className="p-4 mt-2 rounded-lg">
                 {activeTab === "Tab1" && (

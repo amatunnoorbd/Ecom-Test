@@ -42,7 +42,7 @@ const Modal = ({ isOpen, onClose, children }) => {
       >
         {/* Close Button with Circle Background */}
         <button
-          className="border-2 border-white absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition"
+          className="z-10 border-2 border-white absolute -top-2 -right-2 w-6 h-6 flex items-center justify-center rounded-full bg-black text-white font-semibold hover:bg-gray-800 transition"
           onClick={onClose}
         >
           ✕

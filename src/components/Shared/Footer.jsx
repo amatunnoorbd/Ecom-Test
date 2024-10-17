@@ -1,7 +1,16 @@
+"use client"
 import { SiFacebook } from "react-icons/si";
 import { GrYoutube } from "react-icons/gr";
+import { usePathname } from "next/navigation";
+
 
 const Footer = () => {
+    const pathName = usePathname();
+    // Hide the footer on checkout page
+    if (pathName.includes('checkout')) {
+        return <></>;
+    }
+
     return (
         <footer className="text-white px-40 bg-black ">
             <div className="footer py-14 flex">
