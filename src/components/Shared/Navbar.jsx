@@ -10,6 +10,7 @@ import { usePathname } from 'next/navigation';
 import Modal from './Modal';
 import LoginPageDesign from '../Authentication/LoginPageDesign';
 import { useState } from 'react';
+import WishlistDrawer from './WishlistDrawer';
 
 const Navbar = () => {
     const pathName = usePathname();
@@ -46,7 +47,8 @@ const Navbar = () => {
                     {/* Icons Section */}
                     <div className='flex gap-3 text-2xl text-[#736a6a]'>
                         <FiPhone />
-                        <BsBookmarkHeart />
+                        {/* <BsBookmarkHeart /> */}
+                        <WishlistDrawer></WishlistDrawer>
                         <button onClick={() => setIsModalOpen(true)}>
                             <LuUser2 />
                         </button>
