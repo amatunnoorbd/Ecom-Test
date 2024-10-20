@@ -1,7 +1,6 @@
 "use client";
 import Image from 'next/image';
 import { FiPhone, FiSearch } from 'react-icons/fi';
-import { BsBookmarkHeart } from "react-icons/bs";
 import { LuUser2 } from "react-icons/lu";
 import { IoIosArrowDown } from "react-icons/io";
 import image from '../Image/logo.png';
@@ -11,10 +10,40 @@ import Modal from './Modal';
 import LoginPageDesign from '../Authentication/LoginPageDesign';
 import { useState } from 'react';
 import WishlistDrawer from './WishlistDrawer';
+import { useSession } from 'next-auth/react';
+import Swal from 'sweetalert2';
 
 const Navbar = () => {
     const pathName = usePathname();
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const session = useSession();
+    console.log(session);
+
+    const handleLoginSuccess = () => {
+        setIsModalOpen(false);  // Close the modal
+
+        // Trigger SweetAlert
+        Swal.fire({
+            title: 'Login Successful!',
+            text: 'Welcome to your dashboard.',
+            icon: 'success',
+            confirmButtonText: 'OK',
+            timer: 3000,  // Auto-close after 3 seconds
+            timerProgressBar: true,
+        });
+    };
+
+    const handleLoginError = () => {
+        // Trigger SweetAlert
+        Swal.fire({
+            title: 'Number and Password not Match!',
+            icon: 'error',
+            confirmButtonText: 'Try again',
+            timer: 3000,  // Auto-close after 3 seconds
+            timerProgressBar: true,
+        });
+    }
+
 
     // Check if the current route is active
     const isActive = (route) => pathName === route;
@@ -45,12 +74,20 @@ const Navbar = () => {
                     <Image height={220} width={220} alt="logo" src={image} />
 
                     {/* Icons Section */}
-                    <div className='flex gap-3 text-2xl text-[#736a6a]'>
+                    <div className='flex gap-3 text-2xl text-[#736a6a] items-center'>
                         <FiPhone />
                         {/* <BsBookmarkHeart /> */}
                         <WishlistDrawer></WishlistDrawer>
-                        <button onClick={() => setIsModalOpen(true)}>
-                            <LuUser2 />
+                        <button>
+
+                            {session?.status === 'authenticated' ?
+                                <Link href="/user"
+                                    className="text-xl bg-[#a3866e] w-9 h-9 rounded-full flex items-center justify-center">
+                                    <LuUser2 className='text-white' />
+                                </Link>
+                                : <LuUser2 onClick={() => setIsModalOpen(true)} />
+                            }
+
                         </button>
                     </div>
 
@@ -179,11 +216,15 @@ const Navbar = () => {
                 </div>
 
             </div>
-            
-             {/* Modal */}
-             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+
+            {/* Modal */}
+            <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <div>
-                    <LoginPageDesign></LoginPageDesign>
+                    <LoginPageDesign
+                        onLoginSuccess={handleLoginSuccess}
+                        onLoginerror={handleLoginError}
+                        closeModal={() => setIsModalOpen(false)}
+                    ></LoginPageDesign>
                 </div>
             </Modal>
         </>

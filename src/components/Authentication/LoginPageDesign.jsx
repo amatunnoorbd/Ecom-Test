@@ -1,11 +1,15 @@
 "use client";
-
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaFacebookF, FaGoogle } from 'react-icons/fa';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 
-const LoginPageDesign = () => {
+const LoginPageDesign = ({ onLoginSuccess, onLoginerror, closeModal }) => {
+  const router = useRouter();
   const [isLogin, setIsLogin] = useState(true); // State to track if it's login or signup
+  const [loading, setLoading] = useState(false);
 
   const toggleForm = () => {
     setIsLogin(!isLogin); // Toggle between login and signup
@@ -22,6 +26,85 @@ const LoginPageDesign = () => {
     visible: { x: 0, opacity: 1, transition: { duration: 0.5 } },
     exit: { x: isLogin ? '100%' : '-100%', opacity: 0, transition: { duration: 0.5 } },
   };
+
+  // signup with number and pass functonality
+  const handleSignup = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    const mobile = event.target.mobile.value;
+    const password = event.target.password.value;
+
+    try {
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mobile, password }),
+      });
+
+      const data = await response.json();
+      if (response.status === 201) {
+        // User created, now sign in the user
+        const result = await signIn("credentials", {
+          redirect: false,
+          mobile,
+          password,
+        });
+
+        if (result?.ok) {
+          closeModal(); // Close the modal
+          Swal.fire({
+            title: "Good job!",
+            text: "New User Created",
+            icon: "success",
+            timer: 1000,
+            showConfirmButton: false, // Optional: Hide the confirm button
+          }).then(() => {
+            // Redirect after SweetAlert finishes
+            window.location.href = "/user";
+          });
+
+        } else {
+          console.error("Sign in failed:", result);
+        }
+      } else {
+        alert(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      console.error("Signup error:", error);
+      alert("Error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+
+  };
+
+
+  // signin with number and pass 
+  const handleSignIn = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+
+    const mobile = event.target.mobile.value.trim();  // trim করে খালি স্পেস রিমুভ করছি
+    const password = event.target.password.value;
+    console.log(mobile, password);
+
+    const res = await signIn("credentials", {
+      mobile,
+      password,
+      redirect: false,
+    });
+
+    if (res.error) {
+      onLoginerror();
+      console.log("Login failed:", res.error); // Error লগ করে দেখো কি আসছে
+    } else {
+      onLoginSuccess();
+      router.push('/user');
+      setLoading(false);
+    }
+
+  };
+
 
   return (
     <div className="flex border-2 shadow-xl border-[#d4cbcb] w-[830px] h-[460px]">
@@ -50,7 +133,7 @@ const LoginPageDesign = () => {
         variants={containerVariants}
       >
         {isLogin ? (
-          <motion.form
+          <motion.div
             className="w-full max-w-md"
             initial="hidden"
             animate="visible"
@@ -94,22 +177,24 @@ const LoginPageDesign = () => {
                 <p className=' w-full border border-dashed border-[#878080]'></p>
               </div>
 
-              <form className='px-14'>
+              <form className='px-14' onSubmit={handleSignIn}>
                 {/* <h2 className="text-2xl font-semibold pb-2">LOGIN</h2> */}
                 <p className=''>Mobile number</p>
-                <input type="email" placeholder="enter your mobile number" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
+                <input type="text" name='mobile' placeholder="enter your mobile number" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
                 <p className='mt-1'>Password</p>
-                <input type="email" placeholder="enter password" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
+                <input type="password" name='password' placeholder="enter password" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
                 <div className='text-center'>
-                  <button className='bg-[#AB8D74] text-white p-[5px] px-5 py-2 rounded-sm hover:bg-[#93735a] mt-4'>LOGIN</button>
+                  <button className='bg-[#AB8D74] text-white p-[5px] px-5 py-2 rounded-sm hover:bg-[#93735a] mt-4'>
+                    {loading ? <span className="loading loading-spinner loading-sm"></span> : "LOGIN"}
+                  </button>
                 </div>
               </form>
 
             </div>
 
-          </motion.form>
+          </motion.div>
         ) : (
-          <motion.form
+          <motion.div
             className="w-full max-w-md space-y-4"
             initial="hidden"
             animate="visible"
@@ -153,19 +238,25 @@ const LoginPageDesign = () => {
                 <p className=' w-full border border-dashed border-[#878080]'></p>
               </div>
 
-              <form className='px-14'>
+              {/* signup with number and pass */}
+              <form className='px-14' onSubmit={handleSignup}>
                 {/* <h2 className="text-2xl font-semibold pb-2">LOGIN</h2> */}
                 <p className=''>Mobile number</p>
-                <input type="email" placeholder="enter your mobile number" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
+                <input type="text" name='mobile' placeholder="enter your mobile number" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
                 <p className='mt-1'>Password</p>
-                <input type="email" placeholder="enter password" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
+                <input type="password" name='password' placeholder="enter password" className="p-2 border border-[#aea9a9] rounded bg-[#ecedf0] focus:outline-[#b3a9a9] w-full" />
                 <div className='text-center'>
-                  <button className='bg-[#AB8D74] text-white p-[5px] px-5 py-2 rounded-sm hover:bg-[#93735a] mt-4'>SIGN UP</button>
+                  <button className='bg-[#AB8D74] text-white p-[5px] px-5 py-2 rounded-sm hover:bg-[#93735a] mt-4'>
+                    {/* SIGN UP */}
+                    {loading ? <span className="loading loading-spinner loading-sm"></span> :
+                      "SIGN UP"
+                    }
+                  </button>
                 </div>
               </form>
 
             </div>
-          </motion.form>
+          </motion.div>
         )}
       </motion.div>
     </div>

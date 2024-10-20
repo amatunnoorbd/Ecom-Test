@@ -5,9 +5,11 @@ import { RiUserLine } from "react-icons/ri";
 import { LiaClipboardListSolid } from "react-icons/lia";
 import { CiStar } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
+import { signOut, useSession } from "next-auth/react";
 
 const UserDashboard = ({ children }) => {
     const [selected, setSelected] = useState('profile'); // State to manage the selected link
+    const session = useSession();
 
     // Handler to set the selected link
     const handleSelect = (link) => {
@@ -57,8 +59,8 @@ const UserDashboard = ({ children }) => {
                     </Link>
 
                     {/* logout */}
-                    <Link href="#"
-                        onClick={() => handleSelect('logout')}
+                    <button href="#"
+                        onClick={() => signOut({ callbackUrl: '/' })}
                         className={`flex gap-4 px-5 items-center h-12 w-full font-semibold ${selected === 'logout' ? 'bg-gray-200' : 'hover:bg-gray-200'}`}
                     >
                         <span
@@ -66,7 +68,7 @@ const UserDashboard = ({ children }) => {
                             <FiLogOut className={`${selected === 'logout' ? 'text-white' : ''}`} />
                         </span>
                         Logout
-                    </Link>
+                    </button>
 
                 </div>
             </div>
