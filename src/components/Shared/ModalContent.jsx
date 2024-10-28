@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { BsBookmarkHeart } from 'react-icons/bs';
 import DetailsPageImage from './DetailsPageImage';
+import Link from 'next/link';
 const sizes = [
     { size: "S", available: 98 },
     { size: "M", available: 45 },
@@ -9,9 +10,11 @@ const sizes = [
     { size: "XL", available: 10 },
 ];
 
-const ModalContent = () => {
+const ModalContent = ({ product }) => {
 
-    const [selectedSize, setSelectedSize] = useState(sizes[0]);
+    const { _id, title, slug_name, main_image, additional_images, color, original_price, discount_price, sizes_and_quantity } = product;
+
+    const [selectedSize, setSelectedSize] = useState(sizes_and_quantity[0]);
     const [quantity, setQuantity] = useState(1);
 
     const handleIncrease = () => {
@@ -31,18 +34,21 @@ const ModalContent = () => {
             <div className='flex gap-5 p-5'>
                 {/* image part */}
                 <div className='w-1/2 z-100 relative '>
-                    <DetailsPageImage />
+                    <DetailsPageImage
+                        main_image={main_image}
+                        additional_images={additional_images}
+                    />
                 </div>
 
                 {/* details part */}
                 <div className='w-1/2 pl-4'>
                     {/* title */}
-                    <h1 className='font-medium text-[#a19393] text-xl'>Premium Solid Shirts for Men I MS-48</h1>
+                    <h1 className='font-medium text-[#a19393] text-xl'>{title} | {slug_name}</h1>
 
                     {/* Pricing Section */}
                     <div className="flex gap-2 mt-2 text-[#675c5c]">
-                        <h1 className="text-3xl font-semibold">TK. 990</h1>
-                        <p className='pt-3'><s>TK. 1400</s></p>
+                        <h1 className="text-3xl font-semibold">TK. {discount_price}</h1>
+                        <p className='pt-3'><s>TK. {original_price}</s></p>
                     </div>
 
                     {/* review section */}
@@ -54,13 +60,13 @@ const ModalContent = () => {
                     <div className='flex gap-2 my-5'>
                         <h1 className='font-semibold'>COLOR:</h1>
                         <div>
-                            <p className='text-[#8A8A8A]'>  Maroon</p>
+                            <p className='text-[#8A8A8A]'>  {color}</p>
                             <Image
                                 className='border-2 p-[1px] border-[#8A8A8A]'
                                 height={50}
                                 width={50}
                                 alt='color-image'
-                                src="https://cdn.bitcommerz.com/manfarebd/media/1727609193871-manfarebd-id-13.jpeg"
+                                src={main_image}
                             ></Image>
                         </div>
                     </div>
@@ -70,7 +76,7 @@ const ModalContent = () => {
                         <h1 className='font-semibold'>SIZE:</h1>
                         <div className="size-selector">
                             <div className="flex gap-3 mb-2">
-                                {sizes.map((item) => (
+                                {sizes_and_quantity.map((item) => (
                                     <button
                                         key={item.size}
                                         onClick={() => setSelectedSize(item)}
@@ -119,7 +125,9 @@ const ModalContent = () => {
                     </div>
 
                     <div className='text-center mt-5'>
-                        <button className='bg-[#AA8C73] px-7 rounded-md font-semibold text-white py-2'>View Full Product Details</button>
+                        <Link href={`/product/${_id}`}>
+                            <button className='bg-[#AA8C73] px-7 rounded-md font-semibold text-white py-2 hover:bg-[#614d3c]'>View Full Product Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@ import { FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
+import SocialSignin from '../Shared/SocialSignin';
 
 const LoginPageDesign = ({ onLoginSuccess, onLoginerror, closeModal }) => {
   const router = useRouter();
@@ -143,23 +144,8 @@ const LoginPageDesign = ({ onLoginSuccess, onLoginerror, closeModal }) => {
             {/* login page */}
             <div>
               {/* google facebook */}
-              <div className='flex gap-5 bg-[#ced0d4] w-full justify-center py-3' >
+              <SocialSignin />
 
-                <button className="flex items-center  bg-[#0F549A] font-semibold ">
-                  <div className='bg-[#163059] p-2'>
-                    <FaFacebookF className="w-5 h-5 pt-[3px] bg-white rounded-sm " />
-                  </div>
-                  <span className='text-white px-3 text-sm'>FACEBOOK LOGIN</span>
-                </button>
-
-                <button className="flex items-center bg-[#E33C2A] font-semibold ">
-                  <div className='bg-[#A42623] p-2'>
-                    <FaGoogle className="text-lg text-white font-bold" />
-                  </div>
-                  <span className='text-white px-3 text-sm'>GOOGLE LOGIN</span>
-                </button>
-
-              </div>
 
               {/* login with otp */}
               <div className='text-center my-6'>
@@ -204,23 +190,8 @@ const LoginPageDesign = ({ onLoginSuccess, onLoginerror, closeModal }) => {
             {/* Signup page */}
             <div>
               {/* google facebook */}
-              <div className='flex gap-5 bg-[#ced0d4] w-full justify-center py-3' >
-
-                <button className="flex items-center  bg-[#0F549A] font-semibold ">
-                  <div className='bg-[#163059] p-2'>
-                    <FaFacebookF className="w-5 h-5 pt-[3px] bg-white rounded-sm " />
-                  </div>
-                  <span className='text-white px-3 text-sm'>FACEBOOK SIGNUP</span>
-                </button>
-
-                <button className="flex items-center bg-[#E33C2A] font-semibold ">
-                  <div className='bg-[#A42623] p-2'>
-                    <FaGoogle className="text-lg text-white font-bold" />
-                  </div>
-                  <span className='text-white px-3 text-sm'>GOOGLE SIGNUP</span>
-                </button>
-
-              </div>
+              <SocialSignin />
+              
 
               {/* signup with otp */}
               <div className='text-center my-6'>

@@ -19,7 +19,7 @@ import Feedback from "@/components/Home/Feedback";
 export default function Home() {
   return (
     <div>
-      <div id="modal-root"></div>
+      {/* <div id="modal-root"></div>
       <Banner></Banner>
       <div className="mx-28 my-5">
         <Image
@@ -40,14 +40,14 @@ export default function Home() {
         ></Image>
       </div>
       <ExtraSliding></ExtraSliding>
-      <Parallax></Parallax>
+      <Parallax></Parallax> */}
       <Panjabi></Panjabi>
-      <PreTShirt></PreTShirt>
+      {/* <PreTShirt></PreTShirt>
       <Gallery></Gallery>
       <Polo_shirt></Polo_shirt>
       <Sports_shirt></Sports_shirt>
       <Feedback></Feedback>
-      <Subscribe></Subscribe>
+      <Subscribe></Subscribe> */}
       
     
     </div>

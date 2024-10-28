@@ -13,8 +13,11 @@ const sizes = [
     { size: "XL", available: 10 },
 ];
 
-const DetailsPage = () => {
-    const [selectedSize, setSelectedSize] = useState(sizes[0]);
+const DetailsPage = ({ product }) => {
+    console.log(product);
+    const { title, categories, slug_name, main_image, additional_images, color, original_price, discount_price, sizes_and_quantity } = product[0];
+    // console.log(title);
+    const [selectedSize, setSelectedSize] = useState(sizes_and_quantity[0]);
     const [quantity, setQuantity] = useState(1);
 
     const handleIncrease = () => {
@@ -30,24 +33,31 @@ const DetailsPage = () => {
         <div className='mx-[5.3%] mb-20'>
 
             {/* path title */}
-            <div className='font-medium text-[#675c5c] my-5'>Home / SHIRT / Solid Shirt / Premium Solid Shirts for Men I MS-48</div>
+            <div className='font-medium text-[#675c5c] my-5'>
+                Home /
+                <span className='uppercase'> {categories}</span> /
+                Solid Shirt /
+                <span> {title}</span> | {slug_name}</div>
 
             {/* details main section */}
             <div className='flex gap-5'>
                 {/* image part */}
                 <div className='w-1/2 z-100 relative '>
-                    <DetailsPageImage />
+                    <DetailsPageImage
+                        main_image={main_image}
+                        additional_images={additional_images}
+                    />
                 </div>
 
                 {/* details part */}
                 <div className='w-1/2 pl-4'>
                     {/* title */}
-                    <h1 className='font-medium text-[#a19393] text-xl'>Premium Solid Shirts for Men I MS-48</h1>
+                    <h1 className='font-medium text-[#a19393] text-xl'>{title} | {slug_name}</h1>
 
                     {/* Pricing Section */}
                     <div className="flex gap-2 mt-2 text-[#675c5c]">
-                        <h1 className="text-3xl font-semibold">TK. 990</h1>
-                        <p className='pt-3'><s>TK. 1400</s></p>
+                        <h1 className="text-3xl font-semibold">TK. {discount_price}</h1>
+                        <p className='pt-3'><s>TK. {original_price}</s></p>
                     </div>
 
                     {/* review section */}
@@ -59,13 +69,13 @@ const DetailsPage = () => {
                     <div className='flex gap-2 my-5'>
                         <h1 className='font-semibold'>COLOR:</h1>
                         <div>
-                            <p className='text-[#8A8A8A]'>  Maroon</p>
+                            <p className='text-[#8A8A8A]'>  {color}</p>
                             <Image
                                 className='border-2 p-[1px] border-[#8A8A8A]'
                                 height={50}
                                 width={50}
                                 alt='color-image'
-                                src="https://cdn.bitcommerz.com/manfarebd/media/1727609193871-manfarebd-id-13.jpeg"
+                                src={main_image}
                             ></Image>
                         </div>
                     </div>
@@ -75,7 +85,7 @@ const DetailsPage = () => {
                         <h1 className='font-semibold'>SIZE:</h1>
                         <div className="size-selector">
                             <div className="flex gap-3 mb-2">
-                                {sizes.map((item) => (
+                                {sizes_and_quantity.map((item) => (
                                     <button
                                         key={item.size}
                                         onClick={() => setSelectedSize(item)}
@@ -159,7 +169,7 @@ const DetailsPage = () => {
 
             {/* details description */}
             <div className='mt-14'>
-                <DetailsDescription />
+                <DetailsDescription product={product} />
             </div>
 
             {/* Related Product */}

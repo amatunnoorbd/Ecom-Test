@@ -2,31 +2,42 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import Modal from './Modal';  // Import Modal
+import Modal from './Modal'; // Import Modal
 import ModalContent from './ModalContent';
 
-const CardSlider = ({ item, height = 390, imageHeightPercent = 66 }) => {
-    const [isHovered, setIsHovered] = useState(false);
+const CardSlider = ({ item, product, height = 390, imageHeightPercent = 66 }) => {
+    const [isHovered, setIsHovered] = useState(false); // Hover state for the image
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const { imge1, image2, title, discount_price, original_price } = item;
+    const { _id, main_image, additional_images, title, discount_price, original_price } = product;
+
+    // Open Modal Only for Add to Cart Button
+    const handleAddToCartClick = (event) => {
+        event.preventDefault();
+        event.stopPropagation(); // Prevent Link propagation
+        setIsModalOpen(true);
+    };
 
     return (
         <>
             <div className="border rounded-xl overflow-hidden shadow-2xl shadow-[#ccc3c3]">
                 <Link
-                    href=""
+                    href={`/product/${_id}`}
                     className="shadow-lg flex flex-col relative"
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
                     style={{ height: `${height}px` }}
                 >
-                    <div className="relative w-full" style={{ height: `${imageHeightPercent}%` }}>
+                    {/* Image Wrapper with hover logic */}
+                    <div
+                        className="relative w-full"
+                        style={{ height: `${imageHeightPercent}%` }}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                    >
                         <Image
                             layout="fill"
                             objectFit="cover"
                             alt="category_1"
-                            src={isHovered ? image2 : imge1}
+                            src={isHovered ? additional_images[0] : main_image}
                             className="rounded-t-xl"
                         />
                     </div>
@@ -43,12 +54,15 @@ const CardSlider = ({ item, height = 390, imageHeightPercent = 66 }) => {
                         </div>
 
                         <div className="text-center mb-2 mt-2">
-                            <button
-                                className="bg-[#eae6e6] font-semibold px-5 py-1 rounded-xl shadow-xl hover:bg-[#9D8068] hover:text-white"
-                                onClick={() => setIsModalOpen(true)}
-                            >
-                                Add to Cart
-                            </button>
+                            {/* Wrapper to isolate button from Link */}
+                            <div onClick={(e) => e.stopPropagation()}> 
+                                <button
+                                    className="bg-[#eae6e6] font-semibold px-5 py-1 rounded-xl shadow-xl hover:bg-[#9D8068] hover:text-white"
+                                    onClick={handleAddToCartClick}
+                                >
+                                    Add to Cart
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </Link>
@@ -57,7 +71,7 @@ const CardSlider = ({ item, height = 390, imageHeightPercent = 66 }) => {
             {/* Modal */}
             <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
                 <div>
-                    <ModalContent></ModalContent>
+                    <ModalContent product={product} />
                 </div>
             </Modal>
         </>

@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from 'next-auth/react';
 import { useState } from "react";
 import { CiEdit } from "react-icons/ci";
 
@@ -6,14 +7,17 @@ const UserPage = () => {
     // Separate states for each section
     const [isEditingAccount, setIsEditingAccount] = useState(false);
     const [isEditingSecurity, setIsEditingSecurity] = useState(false);
+    const { data } = useSession();
+    console.log(data);
+
 
     const handleEditAccount = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         setIsEditingAccount(!isEditingAccount);
     };
 
     const handleEditSecurity = (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
         setIsEditingSecurity(!isEditingSecurity);
     };
 
@@ -36,9 +40,8 @@ const UserPage = () => {
                             type="text"
                             placeholder="Enter your full name"
                             disabled={!isEditingAccount}
-                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${
-                                !isEditingAccount ? "bg-gray-200" : "bg-white"
-                            }`}
+                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${!isEditingAccount ? "bg-gray-200" : "bg-white"
+                                }`}
                         />
                     </div>
 
@@ -46,7 +49,7 @@ const UserPage = () => {
                         <label className="block text-gray-600">Phone Number</label>
                         <input
                             type="text"
-                            value="88017434393982"
+                            value={data?.user?.number}
                             disabled
                             className="mt-1 block w-full p-2 border rounded bg-gray-200"
                         />
@@ -60,9 +63,8 @@ const UserPage = () => {
                             type="email"
                             placeholder="Enter your email address"
                             disabled={!isEditingAccount}
-                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${
-                                !isEditingAccount ? "bg-gray-200" : "bg-white"
-                            }`}
+                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${!isEditingAccount ? "bg-gray-200" : "bg-white"
+                                }`}
                         />
                     </div>
 
@@ -70,9 +72,8 @@ const UserPage = () => {
                         <label className="block">Gender</label>
                         <select
                             disabled={!isEditingAccount}
-                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${
-                                !isEditingAccount ? "bg-gray-200" : "bg-white"
-                            }`}
+                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${!isEditingAccount ? "bg-gray-200" : "bg-white"
+                                }`}
                         >
                             <option>Choose a Gender</option>
                             <option value="male">Male</option>
@@ -99,9 +100,8 @@ const UserPage = () => {
                             type="password"
                             placeholder="Enter current password"
                             disabled={!isEditingSecurity}
-                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${
-                                !isEditingSecurity ? "bg-gray-200" : "bg-white"
-                            }`}
+                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${!isEditingSecurity ? "bg-gray-200" : "bg-white"
+                                }`}
                         />
                     </div>
 
@@ -111,9 +111,8 @@ const UserPage = () => {
                             type="password"
                             placeholder="Enter your new password"
                             disabled={!isEditingSecurity}
-                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${
-                                !isEditingSecurity ? "bg-gray-200" : "bg-white"
-                            }`}
+                            className={`focus:outline-[#beb0b0] mt-1 block w-full p-2 border rounded ${!isEditingSecurity ? "bg-gray-200" : "bg-white"
+                                }`}
                         />
                     </div>
                 </div>

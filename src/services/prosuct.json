@@ -1,0 +1,1082 @@
+[
+    {
+        "id": 1,
+        "categories": "shirt",
+        "title": "Men's Classic White T-Shirt",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1720201381842-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608691290-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608695222-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608699646-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727607568046-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727607571406-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 2,
+        "categories": "shirt",
+        "title": "Premium Solid Shirts for Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1720198319427-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727609441170-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727609443914-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727609446802-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 3,
+        "categories": "shirt",
+        "title": "Summer Denim Shirts for Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1720201192194-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608742181-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608751597-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608755110-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 4,
+        "categories": "shirt",
+        "title": "Premium Solid Shirts for Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1720198319427-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727609441170-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727609443914-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727609446802-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 5,
+        "categories": "shirt",
+        "title": "Summer Denim Shirts for Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1720201192194-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608742181-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608751597-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727608755110-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 6,
+        "title": "Designer Edition Calligraphy T Shirt For Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1726496522598-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1726496527290-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726496530817-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726496533648-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "categories": "t-shirt",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 7,
+        "title": "Designer Edition Calligraphy T Shirt For Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1726495628705-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1726495698946-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726495703406-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726495708176-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "categories": "t-shirt",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 8,
+        "title": "Dawah Sports T-Shirt - Active Wear",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1716904891005-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfare-bd/media/1713198927895-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1716046119081-manfarebd-id-13.webp",
+            "https://cdn.bitcommerz.com/manfarebd/media/1716046111086-manfarebd-id-13.webp"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "categories": "t-shirt",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's t-shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our t-shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality fabric for maximum comfort.",
+            "4": "Short sleeves for a casual look.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each T-shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Iron Medium Heat",
+            "6": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 9,
+        "title": "Designer Edition Calligraphy T Shirt For Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1726496522598-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1726496527290-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726496530817-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726496533648-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "categories": "t-shirt",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 10,
+        "title": "Designer Edition Calligraphy T Shirt For Men",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1726495628705-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1726495698946-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726495703406-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1726495708176-manfarebd-id-13.jpeg"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "categories": "t-shirt",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's denim shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our denim shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality denim fabric for maximum comfort.",
+            "4": "Full sleeves with buttoned cuffs for versatility.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each Shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Do Not Tumble Dry",
+            "6": "Iron Medium Heat",
+            "7": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 11,
+        "title": "Dawah Sports T-Shirt - Active Wear",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1716904891005-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfare-bd/media/1713198927895-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1716046119081-manfarebd-id-13.webp",
+            "https://cdn.bitcommerz.com/manfarebd/media/1716046111086-manfarebd-id-13.webp"
+        ],
+        "color": "Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 55
+            },
+            {
+                "size": "M",
+                "available": 45
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 30
+            }
+        ],
+        "original_price": "1400",
+        "discount_price": "900",
+        "categories": "t-shirt",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Great quality and fits perfectly!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Love the fabric, very comfortable!"
+            }
+        ],
+        "about_category": "Dress up your everyday look with our men's t-shirts that are built to last. The relaxed fit can be worn to match your mood and plans – whether it’s a casual hangout or a dinner date, be stylish, be different, be bold. Pick our t-shirts and you’re ready to stand out from the crowd. Let Manfare be Your Everyday Style Statement.",
+        "product_specification": {
+            "1": "Material: 100% Cotton",
+            "2": "Machine Washable",
+            "3": "Fabrics: Breathable export quality fabric for maximum comfort.",
+            "4": "Short sleeves for a casual look.",
+            "5": "Slightly curved hem that strengthens the shirts.",
+            "6": "Relaxed fit for utmost comfort that compliments your style.",
+            "7": "Quality Control: To identify if each T-shirt is up to the Highest Quality Standard."
+        },
+        "care_instructions": {
+            "1": "Wash with similar colors",
+            "2": "Tumble dry on low",
+            "3": "Wash Separately With Cool Water",
+            "4": "Do Not Bleach",
+            "5": "Iron Medium Heat",
+            "6": "Do Not Iron Over The Label"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Hot Deal"
+    },
+    {
+        "id": 12,
+        "categories": "panjabi",
+        "title": "ELITE Quality Embroidered Panjabi",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1716831917710-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfare-bd/media/1710598278054-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1710598196543-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1710598201173-manfare_bd-id-13.jpeg"
+        ],
+        "color": "Black",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 50
+            },
+            {
+                "size": "M",
+                "available": 40
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 20
+            }
+        ],
+        "original_price": "2000",
+        "discount_price": "1500",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Beautiful design and great quality!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Comfortable and stylish for any occasion!"
+            }
+        ],
+        "about_category": "Elevate your traditional wardrobe with our premium quality embroidered Panjabis that reflect elegance and style for every occasion.",
+        "product_specification": {
+            "1": "Material: High-quality fabric",
+            "2": "Embroidery: Intricate designs for a classy look",
+            "3": "Fit: Tailored for comfort and style",
+            "4": "Wash Care: Easy to maintain"
+        },
+        "care_instructions": {
+            "1": "Hand wash separately",
+            "2": "Do not bleach",
+            "3": "Iron on low heat"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Exclusive Offer"
+    },
+    {
+        "id": 13,
+        "categories": "panjabi",
+        "title": "ELITE Quality Embroidered Panjabi",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1727537643681-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727537652567-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727537824947-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727537389453-manfarebd-id-13.jpeg"
+        ],
+        "color": "Black",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 50
+            },
+            {
+                "size": "M",
+                "available": 40
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 20
+            }
+        ],
+        "original_price": "2000",
+        "discount_price": "1500",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Beautiful design and great quality!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Comfortable and stylish for any occasion!"
+            }
+        ],
+        "about_category": "Elevate your traditional wardrobe with our premium quality embroidered Panjabis that reflect elegance and style for every occasion.",
+        "product_specification": {
+            "1": "Material: High-quality fabric",
+            "2": "Embroidery: Intricate designs for a classy look",
+            "3": "Fit: Tailored for comfort and style",
+            "4": "Wash Care: Easy to maintain"
+        },
+        "care_instructions": {
+            "1": "Hand wash separately",
+            "2": "Do not bleach",
+            "3": "Iron on low heat"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Exclusive Offer"
+    },
+    {
+        "id": 14,
+        "categories": "panjabi",
+        "title": "ELITE Quality Contrast Panjabi",
+        "slug_name": "MS-14",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1716828176130-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfare-bd/media/1709981901480-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1709981904860-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1709981907897-manfare_bd-id-13.jpeg"
+        ],
+        "color": "Navy Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 50
+            },
+            {
+                "size": "M",
+                "available": 40
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 20
+            }
+        ],
+        "original_price": "2000",
+        "discount_price": "1500",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Stylish and comfortable!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Great fit and quality fabric!"
+            }
+        ],
+        "about_category": "Discover elegance with our contrast Panjabis designed for style and comfort, perfect for any festive occasion.",
+        "product_specification": {
+            "1": "Material: Premium fabric",
+            "2": "Contrast: Unique design elements",
+            "3": "Fit: Comfortable and stylish",
+            "4": "Care: Easy to wash and maintain"
+        },
+        "care_instructions": {
+            "1": "Hand wash recommended",
+            "2": "Do not bleach",
+            "3": "Iron on low heat"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Exclusive Offer"
+    },
+    {
+        "id": 15,
+        "categories": "panjabi",
+        "title": "ELITE Quality Embroidered Panjabi",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1716831917710-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfare-bd/media/1710598278054-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1710598196543-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1710598201173-manfare_bd-id-13.jpeg"
+        ],
+        "color": "Black",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 50
+            },
+            {
+                "size": "M",
+                "available": 40
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 20
+            }
+        ],
+        "original_price": "2000",
+        "discount_price": "1500",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Beautiful design and great quality!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Comfortable and stylish for any occasion!"
+            }
+        ],
+        "about_category": "Elevate your traditional wardrobe with our premium quality embroidered Panjabis that reflect elegance and style for every occasion.",
+        "product_specification": {
+            "1": "Material: High-quality fabric",
+            "2": "Embroidery: Intricate designs for a classy look",
+            "3": "Fit: Tailored for comfort and style",
+            "4": "Wash Care: Easy to maintain"
+        },
+        "care_instructions": {
+            "1": "Hand wash separately",
+            "2": "Do not bleach",
+            "3": "Iron on low heat"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Exclusive Offer"
+    },
+    {
+        "id": 16,
+        "categories": "panjabi",
+        "title": "ELITE Quality Embroidered Panjabi",
+        "slug_name": "MS-13",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1727537643681-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfarebd/media/1727537652567-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727537824947-manfarebd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfarebd/media/1727537389453-manfarebd-id-13.jpeg"
+        ],
+        "color": "Black",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 50
+            },
+            {
+                "size": "M",
+                "available": 40
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 20
+            }
+        ],
+        "original_price": "2000",
+        "discount_price": "1500",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Beautiful design and great quality!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Comfortable and stylish for any occasion!"
+            }
+        ],
+        "about_category": "Elevate your traditional wardrobe with our premium quality embroidered Panjabis that reflect elegance and style for every occasion.",
+        "product_specification": {
+            "1": "Material: High-quality fabric",
+            "2": "Embroidery: Intricate designs for a classy look",
+            "3": "Fit: Tailored for comfort and style",
+            "4": "Wash Care: Easy to maintain"
+        },
+        "care_instructions": {
+            "1": "Hand wash separately",
+            "2": "Do not bleach",
+            "3": "Iron on low heat"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Exclusive Offer"
+    },
+    {
+        "id": 17,
+        "categories": "panjabi",
+        "title": "ELITE Quality Contrast Panjabi",
+        "slug_name": "MS-14",
+        "main_image": "https://cdn.bitcommerz.com/manfarebd/media/1716828176130-manfarebd-id-13.jpeg",
+        "additional_images": [
+            "https://cdn.bitcommerz.com/manfare-bd/media/1709981901480-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1709981904860-manfare_bd-id-13.jpeg",
+            "https://cdn.bitcommerz.com/manfare-bd/media/1709981907897-manfare_bd-id-13.jpeg"
+        ],
+        "color": "Navy Blue",
+        "sizes_and_quantity": [
+            {
+                "size": "S",
+                "available": 50
+            },
+            {
+                "size": "M",
+                "available": 40
+            },
+            {
+                "size": "L",
+                "available": 30
+            },
+            {
+                "size": "XL",
+                "available": 20
+            }
+        ],
+        "original_price": "2000",
+        "discount_price": "1500",
+        "reviews": [
+            {
+                "user": "john_doe",
+                "rating": 4,
+                "comment": "Stylish and comfortable!"
+            },
+            {
+                "user": "jane_smith",
+                "rating": 5,
+                "comment": "Great fit and quality fabric!"
+            }
+        ],
+        "about_category": "Discover elegance with our contrast Panjabis designed for style and comfort, perfect for any festive occasion.",
+        "product_specification": {
+            "1": "Material: Premium fabric",
+            "2": "Contrast: Unique design elements",
+            "3": "Fit: Comfortable and stylish",
+            "4": "Care: Easy to wash and maintain"
+        },
+        "care_instructions": {
+            "1": "Hand wash recommended",
+            "2": "Do not bleach",
+            "3": "Iron on low heat"
+        },
+        "about_brand": "Manfare has become locally renowned for the classy collection of men’s everyday wear. The premium design and comfort of our shirts will become your best daily companion. As a lifestyle brand MANFARE aims to serve the customers with the quality one deserves. Since 2017, Manfare has been serving the fashion industry with pride and mastered the art of making men’s wardrobe a reflection of their personality. Define your Everyday Style Statement! Welcome to the world of Manfare Clothing!",
+        "offers": "Exclusive Offer"
+    }
+]

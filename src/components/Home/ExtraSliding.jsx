@@ -1,12 +1,13 @@
 "use client";
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-
-import CommonHeading from '../Shared/CommonHeading';
 import CardSlider from '../Shared/CardSlider';
+import { getProducts } from '@/services/getProdect';
+
+
 // import image
 import card_1 from '../Image/NewArrival/card_1.jpeg';
 import card_11 from '../Image/NewArrival/card_1(1).jpeg';
@@ -66,7 +67,7 @@ const items = [
         discount_price: "900",
         original_price: "1400"
     },
-    
+
     {
         imge1: category_1,
         image2: category_2,
@@ -77,42 +78,61 @@ const items = [
 ]
 
 const ExtraSliding = () => {
-    const swiperRef = useRef(null); // Using useRef to hold the Swiper instance
+    const [products, setProducts] = useState([]); // State to hold products
+    const swiperRef = useRef(null); // Swiper instance reference
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const fetchedProducts = await getProducts();
+            setProducts(fetchedProducts?.products || []); // Set fetched products
+        };
+        fetchProducts();
+    }, []);
+
+    // Ensure Swiper updates properly after products load
+    useEffect(() => {
+        if (swiperRef.current && products.length > 0) {
+            swiperRef.current.swiper.update(); // Update swiper after products change
+        }
+    }, [products]);
 
     const handlePrevClick = () => {
-        if (swiperRef.current) {
-            swiperRef.current.swiper.slidePrev(); // Navigate to the previous slide
-        }
+        swiperRef.current?.swiper.slidePrev(); // Navigate to previous slide
     };
 
     const handleNextClick = () => {
-        if (swiperRef.current) {
-            swiperRef.current.swiper.slideNext(); // Navigate to the next slide
-        }
+        swiperRef.current?.swiper.slideNext(); // Navigate to next slide
     };
 
+
     return (
-        <div className='px-[4.5%] mb-10'>
-            
+        <div className='mb-10 px-[2%]'>
+
             {/* Swiper Slider Section */}
-            <div className='relative py-2'>
-                <Swiper
-                    ref={swiperRef} // Set the ref here
-                    spaceBetween={50} // Gap between cards
-                    slidesPerView={4} // Number of visible slides
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    loop={true}
-                    modules={[Pagination, Autoplay]}
-                >
-                    {items.map((item, idx) => (
-                        <SwiperSlide key={idx}>
-                            <CardSlider item={item} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            <div className='relative  py-2'>
+                {products.length > 0 ? (
+                    <Swiper
+                        ref={swiperRef} // Set swiper reference
+                        spaceBetween={50}
+                        slidesPerView={4}
+                        autoplay={{
+                            delay: 8500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        modules={[Pagination, Autoplay]}
+                    >
+                        {products.map((product, idx) => (
+                            <SwiperSlide key={idx}>
+                                <CardSlider product={product} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                ) : (
+                    <p className='text-center'>
+                        <span className="loading loading-dots loading-lg"></span>
+                    </p> // Show loader or fallback message
+                )}
 
                 {/* Custom Arrow Buttons */}
                 <div className="custom-arrow prev" onClick={handlePrevClick}>
