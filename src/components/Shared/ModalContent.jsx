@@ -3,12 +3,6 @@ import React, { useState } from 'react';
 import { BsBookmarkHeart } from 'react-icons/bs';
 import DetailsPageImage from './DetailsPageImage';
 import Link from 'next/link';
-const sizes = [
-    { size: "S", available: 98 },
-    { size: "M", available: 45 },
-    { size: "L", available: 30 },
-    { size: "XL", available: 10 },
-];
 
 const ModalContent = ({ product }) => {
 
@@ -25,6 +19,33 @@ const ModalContent = ({ product }) => {
             setQuantity(quantity - 1); // Decrease quantity by 1 if greater than 1
         }
     };
+
+    // data post method
+    const addToList = async (collection) => {
+        console.log(collection)
+        try {
+            const resp = await fetch(`http://localhost:3000/api/post/${collection}`, {
+                method: 'POST',
+                body: JSON.stringify(product),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (!resp.ok) {
+                throw new Error('Failed to add product to wishlist.');
+            }
+
+            const data = await resp.json();
+            alert('Product added to wishlist successfully!');
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        }
+    };
+
+
+
+
 
     return (
         <div className='h-[650px] w-[1150px]'>
@@ -111,7 +132,11 @@ const ModalContent = ({ product }) => {
                         </div>
 
                         {/* add to cart */}
-                        <button className='bg-[#f3f0f0] px-11 rounded-md shadow-xl font-semibold hover:bg-[#AA8C73] hover:text-white'>Add To Cart</button>
+                        <button
+                            onClick={() => addToList("cartItem")}
+                            className='bg-[#f3f0f0] px-11 rounded-md shadow-xl font-semibold hover:bg-[#AA8C73] hover:text-white'>
+                            Add To Cart
+                        </button>
 
                         {/* Buy Now  */}
                         <button className='bg-[#AA8C73] px-14 rounded-md font-semibold text-white'>Buy Now</button>
@@ -119,10 +144,14 @@ const ModalContent = ({ product }) => {
                     </div>
 
                     {/* wishlist */}
-                    <div className='font-medium flex items-center gap-1 text-[#877d76]'>
+                    <button
+                        onClick={() => addToList("wishlist")}
+                        className='font-medium flex items-center gap-1 text-[#877d76]'
+                    >
                         <BsBookmarkHeart />
                         <p>ADD TO WISHLIST</p>
-                    </div>
+                    </button>
+
 
                     <div className='text-center mt-5'>
                         <Link href={`/product/${_id}`}>
