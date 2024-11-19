@@ -1,7 +1,21 @@
-import React from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 import CardSlider from './CardSlider';
+import { getProductByCategories } from '@/services/getProdect';
 
-const CategoryPage = ({ items }) => {
+const CategoryPage = ({ categories }) => {
+    const [products, setProducts] = useState([]);
+    console.log(products);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const fetchedProducts = await getProductByCategories(`${categories}`);
+            setProducts(fetchedProducts?.products || []);
+        };
+        fetchProducts();
+    }, []);
+
+
     return (
         <div>
             <div className="justify-end pt-5 py-4 w-full mx-auto flex items-center gap-3">
@@ -23,13 +37,24 @@ const CategoryPage = ({ items }) => {
 
             <div className='grid grid-cols-3 gap-8'>
                 {
-                    items.map((item, idx) =>
-                        <CardSlider
-                            key={idx} 
-                            item={item}
-                            height="490"
-                            imageHeightPercent="70"
-                        />)
+                    products.length > 0 ? (
+                        products?.map((product, idx) =>
+                            <CardSlider
+                                key={idx}
+                                product={product}
+                                height={490}
+                                imageHeightPercent={70}
+                            />)
+                    ) : (
+                        [...Array(6)].map((_, idx) => (
+                            <CardSlider
+                                key={idx}
+                                isLoading
+                                height={490}
+                                imageHeightPercent={70}
+                            />
+                        ))
+                    )
                 }
             </div>
         </div>

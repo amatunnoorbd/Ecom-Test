@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -22,6 +22,7 @@ import card_6 from '../Image/bestselling/card_6.jpeg';
 import card_66 from '../Image/bestselling/card_6(6).jpeg';
 import category_1 from '../Image/category_1.jpeg';
 import category_2 from '../Image/category_2.jpeg';
+import { getProducts } from '@/services/getProdect';
 
 const items = [
     {
@@ -66,7 +67,7 @@ const items = [
         discount_price: "900",
         original_price: "1400"
     },
-    
+
     {
         imge1: category_1,
         image2: category_2,
@@ -77,48 +78,67 @@ const items = [
 ]
 
 const NewArrival = () => {
-    const swiperRef = useRef(null); // Using useRef to hold the Swiper instance
+    const [products, setProducts] = useState([]); // State to hold products
+    const swiperRef = useRef(null); // Swiper instance reference
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const fetchedProducts = await getProducts();
+            setProducts(fetchedProducts?.products || []);
+        };
+        fetchProducts();
+    }, []);
+
+    // Ensure Swiper updates properly after products load
+    useEffect(() => {
+        if (swiperRef.current && products.length > 0) {
+            swiperRef.current.swiper.update(); // Update swiper after products change
+        }
+    }, [products]);
 
     const handlePrevClick = () => {
-        if (swiperRef.current) {
-            swiperRef.current.swiper.slidePrev(); // Navigate to the previous slide
-        }
+        swiperRef.current?.swiper.slidePrev(); // Navigate to previous slide
     };
 
     const handleNextClick = () => {
-        if (swiperRef.current) {
-            swiperRef.current.swiper.slideNext(); // Navigate to the next slide
-        }
+        swiperRef.current?.swiper.slideNext(); // Navigate to next slide
     };
 
     return (
         <div className='px-[4.5%] mb-10'>
             <CommonHeading
-                title="BEST SELLING PRODUCT"
+                title="NEW ARRIVAL PRODUCTS"
                 view="yes"
             />
 
             {/* Swiper Slider Section */}
             <div className='relative py-2'>
                 <Swiper
-                    ref={swiperRef} // Set the ref here
-                    spaceBetween={50} // Gap between cards
-                    slidesPerView={4} // Number of visible slides
+                    ref={swiperRef}
+                    spaceBetween={50}
+                    slidesPerView={4}
                     autoplay={{
-                        delay: 2500,
+                        delay: 222500,
                         disableOnInteraction: false,
                     }}
                     loop={true}
                     modules={[Pagination, Autoplay]}
                 >
-                    {items.map((item, idx) => (
-                        <SwiperSlide key={idx}>
-                            <CardSlider item={item} />
-                        </SwiperSlide>
-                    ))}
+                    {products.length > 0 ? (
+                        [...products]?.reverse().map((product, idx) => (
+                            <SwiperSlide key={idx}>
+                                <CardSlider product={product} />
+                            </SwiperSlide>
+                        ))
+                    ) : (
+                        [...Array(4)].map((_, idx) => (
+                            <SwiperSlide key={idx}>
+                                <CardSlider isLoading /> {/* Show skeleton */}
+                            </SwiperSlide>
+                        ))
+                    )}
                 </Swiper>
 
-                {/* Custom Arrow Buttons */}
                 <div className="custom-arrow prev" onClick={handlePrevClick}>
                     <span>&lt;</span>
                 </div>
@@ -126,6 +146,8 @@ const NewArrival = () => {
                     <span>&gt;</span>
                 </div>
             </div>
+            
+
         </div>
     );
 };

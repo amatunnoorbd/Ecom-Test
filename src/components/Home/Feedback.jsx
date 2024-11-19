@@ -44,7 +44,7 @@ const Feedback = () => {
                     loop={true}
                     modules={[Pagination, Autoplay]}
                 >
-                    {[1,2,3,4,5,6,7,8].map((item, idx) => (
+                    {[1,2,3,4,5,6,7,8]?.map((item, idx) => (
                         <SwiperSlide key={idx}>
                             <FeedbackCard  />
                         </SwiperSlide>

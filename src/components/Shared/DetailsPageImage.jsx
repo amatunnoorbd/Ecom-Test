@@ -12,9 +12,9 @@ const DetailsPageImage = ({ additional_images, main_image }) => {
     const [showZoom, setShowZoom] = useState(false);
 
     const handleMouseMove = (e) => {
-        const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-        const x = ((e.clientX - left) / width) * 100;
-        const y = ((e.clientY - top) / height) * 100;
+        const { left, top, width, height } = e?.currentTarget?.getBoundingClientRect();
+        const x = ((e?.clientX - left) / width) * 100;
+        const y = ((e?.clientY - top) / height) * 100;
         setZoomPosition({ x, y });
         setShowZoom(true);
     };
@@ -28,7 +28,7 @@ const DetailsPageImage = ({ additional_images, main_image }) => {
             <div className="flex">
                 {/* Thumbnail Images */}
                 <div className="flex flex-col gap-2 mr-3">
-                    {images.map((img, idx) => (
+                    {images?.map((img, idx) => (
                         <div key={idx} className="cursor-pointer">
                             <Image
                                 src={img}

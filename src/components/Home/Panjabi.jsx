@@ -7,16 +7,17 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import CardSlider from '../Shared/CardSlider';
-import { getProducts } from '@/services/getProdect';
+import { getProductByCategories } from '@/services/getProdect';
 
 const Panjabi = () => {
     const [products, setProducts] = useState([]); // State to hold products
     const swiperRef = useRef(null); // Swiper instance reference
+    console.log(products);
 
     useEffect(() => {
         const fetchProducts = async () => {
-            const fetchedProducts = await getProducts();
-            setProducts(fetchedProducts?.products || []); // Set fetched products
+            const fetchedProducts = await getProductByCategories("panjabi");
+            setProducts(fetchedProducts?.products || []);
         };
         fetchProducts();
     }, []);
@@ -57,13 +58,13 @@ const Panjabi = () => {
                         spaceBetween={50}
                         slidesPerView={3}
                         autoplay={{
-                            delay: 8500,
+                            delay: 2500,
                             disableOnInteraction: false,
                         }}
                         loop={true}
                         modules={[Pagination, Autoplay]}
                     >
-                        {products.map((product, idx) => (
+                        {products?.map((product, idx) => (
                             <SwiperSlide key={idx}>
                                 <CardSlider product={product} />
                             </SwiperSlide>
@@ -82,6 +83,8 @@ const Panjabi = () => {
                 <div className="custom-arrow next" onClick={handleNextClick}>
                     <span>&gt;</span>
                 </div>
+
+
             </div>
         </div>
     );

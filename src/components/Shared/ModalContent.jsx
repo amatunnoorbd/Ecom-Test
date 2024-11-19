@@ -6,9 +6,9 @@ import Link from 'next/link';
 
 const ModalContent = ({ product }) => {
 
-    const { _id, title, slug_name, main_image, additional_images, color, original_price, discount_price, sizes_and_quantity } = product;
+    const { _id, title, slug_name, main_image, additional_images, color, original_price, discount_price, sizes_and_quantity } = product || {};
 
-    const [selectedSize, setSelectedSize] = useState(sizes_and_quantity[0]);
+    const [selectedSize, setSelectedSize] = useState(1);
     const [quantity, setQuantity] = useState(1);
 
     const handleIncrease = () => {
@@ -24,7 +24,7 @@ const ModalContent = ({ product }) => {
     const addToList = async (collection) => {
         console.log(collection)
         try {
-            const resp = await fetch(`http://localhost:3000/api/post/${collection}`, {
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${collection}`, {
                 method: 'POST',
                 body: JSON.stringify(product),
                 headers: {
@@ -97,7 +97,7 @@ const ModalContent = ({ product }) => {
                         <h1 className='font-semibold'>SIZE:</h1>
                         <div className="size-selector">
                             <div className="flex gap-3 mb-2">
-                                {sizes_and_quantity.map((item) => (
+                                {sizes_and_quantity?.map((item) => (
                                     <button
                                         key={item.size}
                                         onClick={() => setSelectedSize(item)}
@@ -139,7 +139,7 @@ const ModalContent = ({ product }) => {
                         </button>
 
                         {/* Buy Now  */}
-                        <button className='bg-[#AA8C73] px-14 rounded-md font-semibold text-white'>Buy Now</button>
+                        <Link href={`/checkout/${_id}`} className='bg-[#AA8C73] px-14 rounded-md font-semibold text-white flex items-center'>Buy Now</Link>
 
                     </div>
 

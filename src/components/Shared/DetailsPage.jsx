@@ -6,18 +6,14 @@ import { BsBookmarkHeart } from 'react-icons/bs';
 import { FaFacebookF, FaFacebookMessenger, FaPhoneAlt, FaWhatsapp } from 'react-icons/fa';
 import DetailsDescription from './DetailsDescription';
 import RelatedProduct from './RelatedProduct';
-const sizes = [
-    { size: "S", available: 98 },
-    { size: "M", available: 45 },
-    { size: "L", available: 30 },
-    { size: "XL", available: 10 },
-];
+import CommonHeading from './CommonHeading';
+import Link from 'next/link';
 
 const DetailsPage = ({ product }) => {
     console.log(product);
-    const { title, categories, slug_name, main_image, additional_images, color, original_price, discount_price, sizes_and_quantity } = product[0];
-    // console.log(title);
-    const [selectedSize, setSelectedSize] = useState(sizes_and_quantity[0]);
+    const { _id, title, categories, slug_name, main_image, additional_images, color, original_price, discount_price, sizes_and_quantity, reviews } = product[0] || {};
+    console.log(categories);
+    const [selectedSize, setSelectedSize] = useState(1);
     const [quantity, setQuantity] = useState(1);
 
     const handleIncrease = () => {
@@ -28,6 +24,40 @@ const DetailsPage = ({ product }) => {
             setQuantity(quantity - 1); // Decrease quantity by 1 if greater than 1
         }
     };
+
+    // data post method
+    const addToList = async (collection) => {
+        console.log(collection)
+        try {
+            const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/post/${collection}`, {
+                method: 'POST',
+                body: JSON.stringify(product[0]),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+
+            if (!resp.ok) {
+                throw new Error('Failed to add product to wishlist.');
+            }
+
+            const data = await resp.json();
+            alert('Product added to wishlist successfully!');
+        } catch (error) {
+            alert(`Error: ${error.message}`);
+        }
+    };
+
+
+    // Calculate average rating
+    const averageRating = reviews.length > 0
+        ? (reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length).toFixed(1)
+        : "0.0";
+
+    // Get total reviews
+    const totalReviews = reviews.length;
+
+
 
     return (
         <div className='mx-[5.3%] mb-20'>
@@ -61,7 +91,9 @@ const DetailsPage = ({ product }) => {
                     </div>
 
                     {/* review section */}
-                    <button className='border p-[3px] shadow-xl my-5'>0.0 <span className='text-yellow-400'>★</span> |  0 Reviews</button>
+                    <button className='border p-[3px] shadow-xl my-5'>
+                        {averageRating} <span className='text-yellow-400'>★</span> | {totalReviews} Reviews
+                    </button>
 
                     <p className='border-b h-2'></p>
 
@@ -85,7 +117,7 @@ const DetailsPage = ({ product }) => {
                         <h1 className='font-semibold'>SIZE:</h1>
                         <div className="size-selector">
                             <div className="flex gap-3 mb-2">
-                                {sizes_and_quantity.map((item) => (
+                                {sizes_and_quantity?.map((item) => (
                                     <button
                                         key={item.size}
                                         onClick={() => setSelectedSize(item)}
@@ -120,18 +152,21 @@ const DetailsPage = ({ product }) => {
                         </div>
 
                         {/* add to cart */}
-                        <button className='bg-[#f3f0f0] px-11 rounded-md shadow-xl font-semibold hover:bg-[#AA8C73] hover:text-white'>Add To Cart</button>
+                        <button
+                            onClick={() => addToList("cartItem")}
+                            className='bg-[#f3f0f0] px-11 rounded-md shadow-xl font-semibold hover:bg-[#AA8C73] hover:text-white'>Add To Cart</button>
 
                         {/* Buy Now  */}
-                        <button className='bg-[#AA8C73] px-14 rounded-md font-semibold text-white'>Buy Now</button>
-
+                        <Link href={`/checkout/${_id}`} className='bg-[#AA8C73] px-14 rounded-md font-semibold text-white flex items-center'>Buy Now</Link>
                     </div>
 
                     {/* wishlist */}
-                    <div className='font-medium flex items-center gap-1 text-[#877d76]'>
+                    <button
+                        onClick={() => addToList("wishlist")}
+                        className='font-medium flex items-center gap-1 text-[#877d76]'>
                         <BsBookmarkHeart />
                         <p>ADD TO WISHLIST</p>
-                    </div>
+                    </button>
 
                     {/* call button */}
                     <div className='mt-11 mb-3 h-50 relative'>
@@ -173,7 +208,14 @@ const DetailsPage = ({ product }) => {
             </div>
 
             {/* Related Product */}
-            <RelatedProduct />
+
+            <div className='mt-5'>
+                <CommonHeading
+                    title="YOU MAY ALSO LIKE"
+                    view="no"
+                />
+                <RelatedProduct categories={categories} />
+            </div>
 
         </div>
     );

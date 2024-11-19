@@ -26,7 +26,7 @@ const TestPage = () => {
             <div className="shadow-xl bg-gray-100 border w-[500px] h-[300px] p-6 flex flex-col items-center">
                 <h1 className="text-2xl font-bold mb-4">Select Your Favorite Images</h1>
                 <div className="grid grid-cols-3 gap-4">
-                    {images.map((image) => (
+                    {images?.map((image) => (
                         <div
                             key={image.id}
                             onClick={() => toggleSelection(image.id)}

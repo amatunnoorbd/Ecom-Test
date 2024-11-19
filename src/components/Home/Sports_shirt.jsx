@@ -1,94 +1,41 @@
 "use client";
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import main_img from '../Image/panjabi/sport_shirt_main.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-
-// Import images
+import { getProductByCategories } from '@/services/getProdect';
 import CardSlider from '../Shared/CardSlider';
-import card_1 from '../Image/bestselling/card_1.jpeg';
-import card_11 from '../Image/bestselling/card_1(2).jpeg';
-import card_2 from '../Image/bestselling/card_2.jpeg';
-import card_22 from '../Image/bestselling/card_2(2).jpeg';
-import card_3 from '../Image/bestselling/card_3.jpeg';
-import card_33 from '../Image/bestselling/card_3(3).jpeg';
-import card_4 from '../Image/bestselling/card_4.jpeg';
-import card_44 from '../Image/bestselling/card_4(4).jpeg';
-import card_5 from '../Image/bestselling/card_5.jpeg';
-import card_55 from '../Image/bestselling/card_5(5).jpeg';
-import card_6 from '../Image/bestselling/card_6.jpeg';
-import card_66 from '../Image/bestselling/card_6(6).jpeg';
-import category_1 from '../Image/category_1.jpeg';
-import category_2 from '../Image/category_2.jpeg';
 
-const items = [
-    {
-        imge1: card_1,
-        image2: card_11,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-    {
-        imge1: card_2,
-        image2: card_22,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-    {
-        imge1: card_3,
-        image2: card_33,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-    {
-        imge1: card_2,
-        image2: card_22,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-    {
-        imge1: card_4,
-        image2: card_44,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-    {
-        imge1: category_1,
-        image2: category_2,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-    {
-        imge1: card_3,
-        image2: card_33,
-        title: "Summer Denim Shirts for Men | MS-11",
-        discount_price: "900",
-        original_price: "1400",
-    },
-];
 
 const Sports_shirt = () => {
-    const swiperRef = useRef(null); // Using useRef to hold the Swiper instance
+    const [products, setProducts] = useState([]); // State to hold products
+    const swiperRef = useRef(null); // Swiper instance reference
+    console.log(products);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const fetchedProducts = await getProductByCategories("t-shirt");
+            setProducts(fetchedProducts?.products || []);
+        };
+        fetchProducts();
+    }, []);
+
+    // Ensure Swiper updates properly after products load
+    useEffect(() => {
+        if (swiperRef.current && products.length > 0) {
+            swiperRef.current.swiper.update(); // Update swiper after products change
+        }
+    }, [products]);
 
     const handlePrevClick = () => {
-        if (swiperRef.current) {
-            swiperRef.current.swiper.slidePrev(); // Navigate to the previous slide
-        }
+        swiperRef.current?.swiper.slidePrev(); // Navigate to previous slide
     };
 
     const handleNextClick = () => {
-        if (swiperRef.current) {
-            swiperRef.current.swiper.slideNext(); // Navigate to the next slide
-        }
+        swiperRef.current?.swiper.slideNext(); // Navigate to next slide
     };
 
     return (
@@ -105,24 +52,30 @@ const Sports_shirt = () => {
             </div>
 
             {/* Swiper Slider Section */}
-            <div className='relative w-[71%] bg-[#e8e2e2] pl-10 py-1'>
-                <Swiper
-                    ref={swiperRef} // Set the ref here
-                    spaceBetween={50} // Gap between cards
-                    slidesPerView={3} // Number of visible slides
-                    autoplay={{
-                        delay: 2500,
-                        disableOnInteraction: false,
-                    }}
-                    loop={true}
-                    modules={[Pagination, Autoplay]}
-                >
-                    {items.map((item, idx) => (
-                        <SwiperSlide key={idx}>
-                            <CardSlider item={item} />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+            <div className='relative w-[71%] bg-[#e8e2e2] pr-10 py-1'>
+                {products.length > 0 ? (
+                    <Swiper
+                        ref={swiperRef} // Set swiper reference
+                        spaceBetween={50}
+                        slidesPerView={3}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        modules={[Pagination, Autoplay]}
+                    >
+                        {products?.map((product, idx) => (
+                            <SwiperSlide key={idx}>
+                                <CardSlider product={product} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                ) : (
+                    <p className='text-center'>
+                        <span className="loading loading-dots loading-lg"></span>
+                    </p> // Show loader or fallback message
+                )}
 
                 {/* Custom Arrow Buttons */}
                 <div className="custom-arrow prev" onClick={handlePrevClick}>
@@ -131,6 +84,7 @@ const Sports_shirt = () => {
                 <div className="custom-arrow next" onClick={handleNextClick}>
                     <span>&gt;</span>
                 </div>
+
             </div>
         </div>
     );

@@ -85,8 +85,8 @@ const LoginPageDesign = ({ onLoginSuccess, onLoginerror, closeModal }) => {
     event.preventDefault();
     setLoading(true);
 
-    const mobile = event.target.mobile.value.trim();  // trim করে খালি স্পেস রিমুভ করছি
-    const password = event.target.password.value;
+    const mobile = event?.target?.mobile?.value?.trim();  // trim করে খালি স্পেস রিমুভ করছি
+    const password = event?.target?.password?.value;
     console.log(mobile, password);
 
     const res = await signIn("credentials", {

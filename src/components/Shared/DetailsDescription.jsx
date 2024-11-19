@@ -3,7 +3,7 @@ import { useState } from "react";
 const DetailsDescription = ({ product }) => {
 
     const [activeTab, setActiveTab] = useState("Tab1");
-    const { about_category, product_specification, care_instructions, about_brand } = product[0];
+    const { about_category, product_specification, care_instructions, about_brand } = product[0] || {};
     console.log(product_specification);
 
     return (
@@ -42,7 +42,7 @@ const DetailsDescription = ({ product }) => {
                         {/* Product Specifications */}
                         <h1 className="text-lg font-semibold mb-1 mt-6">Product Specifications:</h1>
                         <ul className="list-disc list-inside ml-5">
-                            {Object.values(product_specification).map((spec, index) => (
+                            {Object.values(product_specification)?.map((spec, index) => (
                                 <li key={index}>{spec}</li>
                             ))}
                         </ul>
@@ -50,7 +50,7 @@ const DetailsDescription = ({ product }) => {
                         {/* Care Instructions */}
                         <h1 className="text-lg font-semibold mb-1 mt-6">Care Instructions:</h1>
                         <ul className="list-disc list-inside ml-5">
-                            {Object.values(care_instructions).map((instruction, index) => (
+                            {Object.values(care_instructions)?.map((instruction, index) => (
                                 <li key={index}>{instruction}</li>
                             ))}
                         </ul>

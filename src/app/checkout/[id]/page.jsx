@@ -1,58 +1,42 @@
 "use client"
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
-import { FaCartArrowDown } from 'react-icons/fa';
 import { FiGift } from 'react-icons/fi';
+import { FaCartArrowDown } from 'react-icons/fa';
 
 
 const CheckoutPage = ({ params }) => {
-
-    console.log(params.type);
-    const [coupon, setCoupon] = useState(''); // Coupon state
-    const [discount, setDiscount] = useState(0); // Discount state
-    const [cartItemList, setcartItemList] = useState([]);
+    console.log(params.id);
+    const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    console.log(items.products);
 
-    // fetch data from cartItem api
-    const fetchcartItemList = async () => {
+
+    // fetch data from wishlist api
+    const getItems = async () => {
+        setLoading(true);
         try {
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/get/cartItem`);
+            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products?_id=${params.id}`);
             if (!response.ok) throw new Error("Failed to fetch data");
             const data = await response.json();
-            setcartItemList(data.cartItem);
+            setItems(data);
+            // console.log(data.wishlist)
         } catch (error) {
-            console.error("Error fetching cart items:", error);
+            console.error("Error fetching product", error);
         } finally {
             setLoading(false);
         }
     };
 
     useEffect(() => {
-        fetchcartItemList();
+        getItems();
     }, []);
 
-    console.log(cartItemList);
-
-    // delete items
-    const handleDelete = async (index, id) => {
-
-        const updatedItems = cartItemList.filter((_, idx) => idx !== index);
-        setcartItemList(updatedItems);
-
-        const deleted = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/api/delete/cartItem/${id}`, {
-            method: "DELETE",
-        }
-        );
-        const resp = await deleted.json();
-        if (resp?.response?.deletedCount > 0) {
-            console.log(resp?.message)
-        }
-    };
-
+    const [coupon, setCoupon] = useState(''); // Coupon state
+    const [discount, setDiscount] = useState(0); // Discount state
 
     // Subtotal calculation
-    const subtotal = cartItemList.reduce(
+    const subtotal = items?.products?.reduce(
         (total, item) => total + parseInt(item.discount_price),
         0
     );
@@ -163,7 +147,7 @@ const CheckoutPage = ({ params }) => {
                         <span>ORDER OVERVIEW</span>
                         <span className='flex items-center gap-2'>
                             <FaCartArrowDown className='text-blue-800' />
-                            <span>{cartItemList.length}</span> {/* Cart item count */}
+                            <span>{items?.products?.length}</span> {/* Cart item count */}
                         </span>
                     </h1>
 
@@ -178,7 +162,7 @@ const CheckoutPage = ({ params }) => {
                             :
                             (
                                 <div className='space-y-3 mb-14'>
-                                    {cartItemList?.map((item, idx) => (
+                                    {items?.products?.map((item, idx) => (
                                         <div key={idx} className='relative flex gap-4 border p-1 shadow-xl'>
                                             <Image
                                                 width={90}
@@ -196,19 +180,11 @@ const CheckoutPage = ({ params }) => {
                                                 </p>
                                             </div>
 
-                                            <button
-                                                onClick={() => handleDelete(idx, item._id)}
-                                                className="z-10 border-2 border-white absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center rounded-full bg-[#5c5757] text-white font-semibold hover:bg-gray-800 transition"
-                                            >
-                                                ✕
-                                            </button>
                                         </div>
                                     ))}
                                 </div>
-
                             )
                     }
-
 
 
                     {/* Price Calculation */}

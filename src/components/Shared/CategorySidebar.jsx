@@ -68,7 +68,7 @@ const CategorySidebar = () => {
 
                 <div className="h-72 overflow-y-auto p-3 rounded-md mb-8">
                     <ul className="space-y-1">
-                        {colors.map((item, index) => (
+                        {colors?.map((item, index) => (
                             <li key={index} className="flex items-center space-x-3">
                                 <input
                                     type="checkbox"
@@ -91,7 +91,7 @@ const CategorySidebar = () => {
 
                 <div className="overflow-y-auto p-3 mb-8 rounded-md ">
                     <ul className="space-y-1">
-                        {ranges.map((item) => (
+                        {ranges?.map((item) => (
                             <li key={item.id} className="flex items-center space-x-3">
                                 <input
                                     type="checkbox"
@@ -114,7 +114,7 @@ const CategorySidebar = () => {
 
                 <div className="overflow-y-auto p-3 mb-8 rounded-md ">
                     <ul className="space-y-1">
-                        {size.map((item) => (
+                        {size?.map((item) => (
                             <li key={item.id} className="flex items-center space-x-3">
                                 <input
                                     type="checkbox"
@@ -137,7 +137,7 @@ const CategorySidebar = () => {
 
                 <div className="overflow-y-auto p-3 mb-8 rounded-md ">
                     <ul className="space-y-1">
-                        {apparels.map((item) => (
+                        {apparels?.map((item) => (
                             <li key={item.id} className="flex items-center space-x-3">
                                 <input
                                     type="checkbox"

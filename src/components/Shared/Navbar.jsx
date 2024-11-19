@@ -8,16 +8,53 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Modal from './Modal';
 import LoginPageDesign from '../Authentication/LoginPageDesign';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import WishlistDrawer from './WishlistDrawer';
 import { useSession } from 'next-auth/react';
 import Swal from 'sweetalert2';
+import axios from 'axios';
+import SearchResult from './SearchResult';
 
 const Navbar = () => {
     const pathName = usePathname();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const session = useSession();
     console.log(session);
+
+    const [data, setData] = useState([]);
+    const [filteredResults, setFilteredResults] = useState([]);
+    console.log(data);
+    console.log(filteredResults)
+
+    // Data fetch korar jonno useEffect use korbo
+    const fetchData = async () => {
+        try {
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`);
+            setData(res.data.products); // Fetched data state e set kora
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+
+    // Search input change howar sathe sathe filter korbo
+    const handleSearchChange = (e) => {
+        const value = e.target.value;
+        if (value) {
+            // Regular expression diye title er sathe partial match check korbo
+            const regex = new RegExp(value, 'i'); // 'i' flag diye case-insensitive match korchi
+            const results = data.filter(item => regex.test(item.title));
+            setFilteredResults(results);
+        } else {
+            setFilteredResults([]); // Jodi input khali hoy tahole filtered results khali
+        }
+    };
+
+
 
     const handleLoginSuccess = () => {
         setIsModalOpen(false);  // Close the modal
@@ -59,16 +96,28 @@ const Navbar = () => {
                 {/* Top Navbar Section */}
                 <div className='flex justify-between items-center px-[4%]'>
                     {/* Search Input */}
-                    <div className="relative w-full max-w-[230px]">
+                    <div
+                     className="relative w-full max-w-[230px]">
                         <input
+                            onChange={handleSearchChange}
                             type="text"
                             placeholder="Search for products..."
                             className="w-full pl-2 pr-8 py-2 bg-transparent border-0 border-b-2 
-                                   border-transparent focus:outline-none focus:ring-0 
-                                   focus:border-[#bbaeae] placeholder-gray-400"
+               border-transparent focus:outline-none focus:ring-0 
+               focus:border-[#bbaeae] placeholder-gray-400"
                         />
                         <FiSearch className="text-lg absolute right-2 bottom-2.5 text-gray-400" />
+
+                        {/* Dropdown matched results */}
+                        {filteredResults.length > 0 && (
+
+                            <SearchResult filteredResults={filteredResults}/>
+
+                        )}
+
+
                     </div>
+
 
                     {/* Website Logo */}
                     <Image height={220} width={220} alt="logo" src={image} />
