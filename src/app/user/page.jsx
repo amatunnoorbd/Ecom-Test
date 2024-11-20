@@ -12,8 +12,8 @@ const UserPage = () => {
     console.log(data?.user?.id);
 
     // State for form fields
-    const [fullName, setFullName] = useState(data?.user?.name || "");
-    const [email, setEmail] = useState(data?.user?.email || "");
+    const [fullName, setFullName] = useState("");
+    const [email, setEmail] = useState("");
     const [gender, setGender] = useState("");
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
@@ -31,42 +31,55 @@ const UserPage = () => {
         setIsEditingSecurity(!isEditingSecurity);
     };
 
-    const handleUpdateUser = async (event) => {
+
+    const handleUpdateUserInfo = async (event) => {
         event.preventDefault();
 
-        const updatedData = { name: "Md Ashik Ali" }; // শুধু যেটি পরিবর্তন করতে চাও সেটি পাঠাও
-        const id = data?.user?.id; // আপডেট করার ডকুমেন্টের আইডি
-        console.log(id);
+        // Create updatedUser object dynamically
+        const updatedUser = {};
+        if (fullName) updatedUser.fullName = fullName;
+        if (email) updatedUser.email = email;
+        if (gender) updatedUser.gender = gender;
 
-        try {
-            // সঠিক API URL ব্যবহার করুন
-            const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/updateUser`, {
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/updateUser/${data?.user?.id}`,
+            {
                 method: "PATCH",
+                body: JSON.stringify(updatedUser),
                 headers: {
-                    "Content-Type": "application/json",
+                    "content-type": "application/json",
                 },
-                body: JSON.stringify({ id, updatedData }), // body এর মধ্যে সঠিক ডেটা পাঠানো হচ্ছে
-            });
-
-            // রেসপন্স চেক
-            const data = await response.json();
-            if (response.ok) {
-                alert('Success!');
-                console.log("Update successful:", data);
-            } else {
-                console.error("Update failed:", data.message);
             }
-        } catch (error) {
-            console.error("Error:", error);
+        );
+        if (resp.status === 200) {
+            alert("Updated Successfully")
         }
     };
 
 
-
-
-    const handleUpdatePassword = (event) => {
+    const handleUpdatePassword = async (event) => {
         event.preventDefault();
-    }
+
+        if (!currentPassword || !newPassword) {
+            alert("Please fill in both current and new passwords.");
+            return;
+        }
+
+        const resp = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/updateUserPass/${data?.user?.id}`,
+            {
+                method: "PATCH",
+                body: JSON.stringify({ currentPassword, newPassword }),
+                headers: {
+                    "content-type": "application/json",
+                },
+            }
+        );
+        if (resp.status === 200) {
+            alert("Updated Successfully")
+        }
+
+    };
+
+
 
     return (
         <div className="bg-white shadow-md rounded-lg p-6 pt-3">
@@ -81,7 +94,7 @@ const UserPage = () => {
                                     onClick={handleEditAccount}
                                     className='font-semibold text-[#76604e]'>Cancel</button>
                                 <button
-                                    onClick={handleUpdateUser}
+                                    onClick={handleUpdateUserInfo}
                                     className='bg-[#826b58] text-white font-semibold px-[9px] py-[3px] rounded-md'>Save</button>
                             </div>
                             :

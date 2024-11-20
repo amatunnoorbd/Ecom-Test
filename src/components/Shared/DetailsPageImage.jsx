@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 const DetailsPageImage = ({ additional_images, main_image }) => {
-    // Combine main_image with additional_images for thumbnails
     const images = [main_image, ...additional_images];
-    console.log(images)
-    
+
     const [mainImage, setMainImage] = useState(main_image);
     const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
     const [showZoom, setShowZoom] = useState(false);
@@ -26,20 +26,33 @@ const DetailsPageImage = ({ additional_images, main_image }) => {
     return (
         <div className="relative">
             <div className="flex">
-                {/* Thumbnail Images */}
-                <div className="flex flex-col gap-2 mr-3">
-                    {images?.map((img, idx) => (
-                        <div key={idx} className="cursor-pointer">
-                            <Image
-                                src={img}
-                                alt={`Thumbnail ${idx + 1}`}
-                                width={120}
-                                height={120}
-                                onClick={() => setMainImage(img)}
-                                className=""
-                            />
-                        </div>
-                    ))}
+                {/* Thumbnail Images with Swiper Slider */}
+                <div className="mr-3 w-[130px]">
+                    <Swiper
+                        direction="vertical"
+                        spaceBetween={10}
+                        slidesPerView={4}
+                        style={{ height: "550px" }}
+                        loop={true}
+                        autoplay={{
+                            delay: 2000, 
+                            disableOnInteraction: false, 
+                        }}
+                    >
+                        {images?.map((img, idx) => (
+                            <SwiperSlide key={idx}>
+                                <div className="cursor-pointer">
+                                    <Image
+                                        src={img}
+                                        alt={`Thumbnail ${idx + 1}`}
+                                        width={120}
+                                        height={120}
+                                        onClick={() => setMainImage(img)}
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
 
                 {/* Main Image */}
